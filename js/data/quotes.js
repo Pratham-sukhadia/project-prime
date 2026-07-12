@@ -1,0 +1,121 @@
+/* ============================================================
+   PROJECT PRIME — Motivational Quotes
+   100+ curated fitness and discipline quotes
+   ============================================================ */
+
+window.QuoteData = (() => {
+  const QUOTES = [
+    { text: "The body achieves what the mind believes.", author: "Napoleon Hill" },
+    { text: "Discipline is choosing between what you want now and what you want most.", author: "Abraham Lincoln" },
+    { text: "The pain you feel today will be the strength you feel tomorrow.", author: "Arnold Schwarzenegger" },
+    { text: "Success isn't always about greatness. It's about consistency.", author: "Dwayne Johnson" },
+    { text: "Your body can stand almost anything. It's your mind that you have to convince.", author: "Unknown" },
+    { text: "Don't count the days, make the days count.", author: "Muhammad Ali" },
+    { text: "The only bad workout is the one that didn't happen.", author: "Unknown" },
+    { text: "Fall in love with the process and the results will come.", author: "Eric Thomas" },
+    { text: "What seems impossible today will one day become your warm-up.", author: "Unknown" },
+    { text: "You don't have to be extreme, just consistent.", author: "Unknown" },
+    { text: "Every champion was once a contender who refused to give up.", author: "Rocky Balboa" },
+    { text: "The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character.", author: "Arnold Schwarzenegger" },
+    { text: "Take care of your body. It's the only place you have to live.", author: "Jim Rohn" },
+    { text: "Strength does not come from physical capacity. It comes from an indomitable will.", author: "Mahatma Gandhi" },
+    { text: "The clock is ticking. Are you becoming the person you want to be?", author: "Greg Plitt" },
+    { text: "Push yourself because no one else is going to do it for you.", author: "Unknown" },
+    { text: "If it doesn't challenge you, it doesn't change you.", author: "Fred DeVito" },
+    { text: "Champions keep going when they don't have anything left in their tank.", author: "Ric Flair" },
+    { text: "Work hard in silence, let your success be the noise.", author: "Frank Ocean" },
+    { text: "The only way to define your limits is by going beyond them.", author: "Arthur C. Clarke" },
+    { text: "You are only one workout away from a good mood.", author: "Unknown" },
+    { text: "It never gets easier, you just get stronger.", author: "Unknown" },
+    { text: "Motivation gets you started. Habit keeps you going.", author: "Jim Ryun" },
+    { text: "Sweat is fat crying.", author: "Unknown" },
+    { text: "The hard days are the best because that's when champions are made.", author: "Gabby Douglas" },
+    { text: "Train insane or remain the same.", author: "Unknown" },
+    { text: "The only person you should try to be better than is the person you were yesterday.", author: "Unknown" },
+    { text: "Don't wish for it. Work for it.", author: "Unknown" },
+    { text: "The iron never lies to you. Two hundred pounds is always two hundred pounds.", author: "Henry Rollins" },
+    { text: "No matter how slow you go, you're still lapping everybody on the couch.", author: "Unknown" },
+    { text: "Pain is temporary. Quitting lasts forever.", author: "Lance Armstrong" },
+    { text: "Be stronger than your excuses.", author: "Unknown" },
+    { text: "Once you learn to quit, it becomes a habit.", author: "Vince Lombardi" },
+    { text: "The best project you'll ever work on is you.", author: "Sonny Franco" },
+    { text: "When you want to succeed as bad as you want to breathe, then you'll be successful.", author: "Eric Thomas" },
+    { text: "Obsessed is a word the lazy use to describe the dedicated.", author: "Unknown" },
+    { text: "Dream big. Start small. Act now.", author: "Robin Sharma" },
+    { text: "The successful warrior is the average man, with laser-like focus.", author: "Bruce Lee" },
+    { text: "It's not about having time. It's about making time.", author: "Unknown" },
+    { text: "Sore today. Strong tomorrow.", author: "Unknown" },
+    { text: "I don't stop when I'm tired. I stop when I'm done.", author: "David Goggins" },
+    { text: "We suffer more in imagination than in reality.", author: "Seneca" },
+    { text: "The first and greatest victory is to conquer yourself.", author: "Plato" },
+    { text: "A year from now you will wish you had started today.", author: "Karen Lamb" },
+    { text: "Your limitation—it's only your imagination.", author: "Unknown" },
+    { text: "Good things come to people who wait, but better things come to those who go out and get them.", author: "Unknown" },
+    { text: "Don't stop until you're proud.", author: "Unknown" },
+    { text: "Wake up with determination. Go to bed with satisfaction.", author: "Unknown" },
+    { text: "The man who moves a mountain begins by carrying away small stones.", author: "Confucius" },
+    { text: "Yesterday you said tomorrow. Just do it.", author: "Nike" },
+    { text: "The harder you work for something, the greater you'll feel when you achieve it.", author: "Unknown" },
+    { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill" },
+    { text: "Respect your body enough to give it the best.", author: "Unknown" },
+    { text: "Dead last finish is greater than did not finish, which trumps did not start.", author: "Unknown" },
+    { text: "Your health is an investment, not an expense.", author: "Unknown" },
+    { text: "The gym is my therapy.", author: "Unknown" },
+    { text: "Strong people are harder to kill and more useful in general.", author: "Mark Rippetoe" },
+    { text: "Action is the foundational key to all success.", author: "Pablo Picasso" },
+    { text: "Rome wasn't built in a day, but they worked on it every day.", author: "Unknown" },
+    { text: "Be patient. Be persistent. Be present.", author: "Unknown" },
+    { text: "The difference between try and triumph is a little umph.", author: "Marvin Phillips" },
+    { text: "Don't let what you can't do interfere with what you can do.", author: "John Wooden" },
+    { text: "Strive for progress, not perfection.", author: "Unknown" },
+    { text: "What you eat in private, you wear in public.", author: "Unknown" },
+    { text: "The body is the servant of the mind.", author: "James Allen" },
+    { text: "Eat clean. Train dirty.", author: "Unknown" },
+    { text: "Greatness is not in where we stand, but in what direction we are moving.", author: "Oliver Wendell Holmes" },
+    { text: "Today I will do what others won't, so tomorrow I can accomplish what others can't.", author: "Jerry Rice" },
+    { text: "Nothing will work unless you do.", author: "Maya Angelou" },
+    { text: "The groundwork of all happiness is health.", author: "Leigh Hunt" },
+    { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+    { text: "Doubt kills more dreams than failure ever will.", author: "Suzy Kassem" },
+    { text: "Be the energy you want to attract.", author: "Unknown" },
+    { text: "Making excuses burns zero calories per hour.", author: "Unknown" },
+    { text: "If you want something you've never had, you have to do something you've never done.", author: "Thomas Jefferson" },
+    { text: "The pain of discipline is far less than the pain of regret.", author: "Sarah Bombell" },
+    { text: "Champions are made when nobody is watching.", author: "Unknown" },
+    { text: "You don't find willpower, you create it.", author: "Unknown" },
+    { text: "Suffer the pain of discipline or suffer the pain of regret.", author: "Jim Rohn" },
+    { text: "Every rep counts. Every meal matters. Every night of sleep adds up.", author: "Project Prime" },
+    { text: "You're not starting over. You're starting from experience.", author: "Unknown" },
+    { text: "Comback season. No excuses. No shortcuts. Just work.", author: "Project Prime" },
+    { text: "This isn't about looking good. It's about becoming someone who doesn't quit.", author: "Project Prime" },
+    { text: "87 to 80. The numbers will change. But the discipline stays forever.", author: "Project Prime" },
+    { text: "Train like there's no finish line.", author: "Unknown" },
+    { text: "Small daily improvements are the key to staggering long-term results.", author: "Unknown" },
+    { text: "You are what you repeatedly do. Excellence is not an act, but a habit.", author: "Aristotle" },
+    { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+    { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+    { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+    { text: "Rule your mind or it will rule you.", author: "Horace" },
+    { text: "Do something today that your future self will thank you for.", author: "Unknown" },
+    { text: "The only impossible journey is the one you never begin.", author: "Tony Robbins" },
+    { text: "Your body hears everything your mind says.", author: "Naomi Judd" },
+    { text: "The purpose of training is to tighten up the slack, toughen the body, and polish the spirit.", author: "Morihei Ueshiba" },
+    { text: "Pratham, your comeback story is being written right now. Make it legendary.", author: "Project Prime" },
+    { text: "Between your goals and your achievements, there's one thing — discipline.", author: "Project Prime" },
+    { text: "Don't break the chain. Show up. Every. Single. Day.", author: "Project Prime" },
+    { text: "Prime is not a destination. It's who you become on the way there.", author: "Project Prime" }
+  ];
+
+  function getTodayQuote() {
+    // Deterministic daily rotation based on date
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+    return QUOTES[dayOfYear % QUOTES.length];
+  }
+
+  function getRandomQuote() {
+    return QUOTES[Math.floor(Math.random() * QUOTES.length)];
+  }
+
+  return { QUOTES, getTodayQuote, getRandomQuote };
+})();
